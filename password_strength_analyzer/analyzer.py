@@ -8,9 +8,13 @@ import string
 import urllib.error
 import urllib.request
 from pathlib import Path
-from typing import Iterable, List
+from typing import List
 
-BREACHED_LIST_PATH = Path(__file__).resolve().parent / "data" / "breached_passwords.txt"
+DATA_DIR = Path(__file__).resolve().parent / "data"
+BREACHED_LIST_PATHS = (
+    DATA_DIR / "breached_passwords.txt",
+    DATA_DIR / "rockyou.txt",
+)
 
 
 @dataclasses.dataclass
@@ -26,13 +30,16 @@ class PasswordAssessment:
 
 
 def _load_breached_passwords() -> set[str]:
-    if not BREACHED_LIST_PATH.exists():
-        return set()
-    return {
-        line.strip().lower()
-        for line in BREACHED_LIST_PATH.read_text(encoding="utf-8").splitlines()
-        if line.strip() and not line.strip().startswith("#")
-    }
+    breached: set[str] = set()
+    for path in BREACHED_LIST_PATHS:
+        if not path.exists():
+            continue
+        breached.update(
+            line.strip().lower()
+            for line in path.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        )
+    return breached
 
 
 def _contains_sequence(password: str) -> bool:

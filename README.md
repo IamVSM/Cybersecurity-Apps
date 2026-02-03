@@ -53,7 +53,7 @@ pip install scikit-learn
 
 This project provides a password risk analyzer that blends heuristic scoring with AI-inspired signals to flag risky patterns and offer safer alternatives. It includes:
 - **Risk scoring** based on length, character variety, sequences, repetition, and common substitutions.
-- **Offline breached pattern detection** using a bundled list of common leaked passwords.
+- **Offline breached pattern detection** using bundled leaked-password lists, including a RockYou-style list.
 - **Optional Have I Been Pwned (HIBP) lookup** via the k-anonymity API for dark web-style insights without sending full passwords.
 
 ### Quick Start
@@ -61,6 +61,12 @@ This project provides a password risk analyzer that blends heuristic scoring wit
 ```bash
 python -m password_strength_analyzer.cli --password "MyP@ssw0rd" --hibp
 ```
+
+### RockYou Dataset Notes
+
+The repository includes a truncated `rockyou.txt` sample for offline matching. Replace
+`password_strength_analyzer/data/rockyou.txt` with the latest RockYou dataset if you want
+full coverage.
 
 ### Example Output
 

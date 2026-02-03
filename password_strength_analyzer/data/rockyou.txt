@@ -1,0 +1,13 @@
+# Truncated rockyou-style list for offline matching.
+# Replace with the latest rockyou.txt dataset in this file if desired.
+123456
+12345
+123456789
+password
+iloveyou
+princess
+qwerty
+football
+monkey
+admin
+welcome
