@@ -91,3 +91,48 @@ full coverage.
   "hibp_count": 4010
 }
 ```
+
+## AI-Powered Incident Response Assistant
+
+This project provides a structured incident response assistant that converts a short incident
+description into a triage-ready playbook. It includes:
+- **Severity scoring** with rationale based on observed indicators.
+- **IR steps** aligned to containment, eradication, and recovery.
+- **Containment checklist** for fast defensive action.
+- **Evidence collection guide** to preserve forensic artifacts.
+- **Executive-ready context** on impact, communications, and detection gaps.
+
+### Quick Start
+
+```bash
+python -m incident_response_assistant.cli \
+  --json '{"incident": "Suspicious PowerShell execution"}'
+```
+
+### Example Output
+
+```json
+{
+  "incident": "Suspicious PowerShell execution",
+  "severity": "High",
+  "severity_score": 0.65,
+  "rationale": [
+    "Indicator observed: powershell.",
+    "Indicator observed: suspicious."
+  ],
+  "ir_steps": [
+    "Confirm alert context and validate the triggering telemetry.",
+    "Scope affected hosts, users, and time range using SIEM and EDR."
+  ],
+  "containment_checklist": [
+    "Isolate affected endpoints from the network."
+  ],
+  "evidence_to_collect": [
+    "PowerShell operational logs and script block logging output."
+  ],
+  "why_cisos_love_this": [
+    "Cuts response time with structured playbooks",
+    "Reduces human error through consistent checklists"
+  ]
+}
+```
