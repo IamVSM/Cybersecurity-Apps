@@ -48,3 +48,40 @@ pip install scikit-learn
   ]
 }
 ```
+
+## AI Password Strength Analyzer
+
+This project provides a password risk analyzer that blends heuristic scoring with AI-inspired signals to flag risky patterns and offer safer alternatives. It includes:
+- **Risk scoring** based on length, character variety, sequences, repetition, and common substitutions.
+- **Offline breached pattern detection** using a bundled list of common leaked passwords.
+- **Optional Have I Been Pwned (HIBP) lookup** via the k-anonymity API for dark web-style insights without sending full passwords.
+
+### Quick Start
+
+```bash
+python -m password_strength_analyzer.cli --password "MyP@ssw0rd" --hibp
+```
+
+### Example Output
+
+```json
+{
+  "password": "MyP@ssw0rd",
+  "risk_score": 0.7,
+  "label": "medium",
+  "reasons": [
+    "Shorter than recommended (12+ characters)",
+    "Uses multiple character categories",
+    "Uses predictable substitutions of common words",
+    "Found in Have I Been Pwned password corpus"
+  ],
+  "suggestions": [
+    "Harbor!82m",
+    "Cobalt#47Q",
+    "Orbit$19p"
+  ],
+  "breached_offline": true,
+  "breached_online": true,
+  "hibp_count": 4010
+}
+```
