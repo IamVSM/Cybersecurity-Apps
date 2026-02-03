@@ -1,0 +1,38 @@
+[
+  {
+    "label": "phishing",
+    "subject": "Urgent: Verify your account now",
+    "sender": "security@paypa1.com",
+    "body": "We noticed unusual activity. Verify your account immediately to avoid suspension. Click the link and login now."
+  },
+  {
+    "label": "phishing",
+    "subject": "Your mailbox will be closed",
+    "sender": "it-support@company-mail.com",
+    "body": "Your mailbox is over quota. Click here to upgrade storage and avoid losing messages."
+  },
+  {
+    "label": "phishing",
+    "subject": "Invoice attached",
+    "sender": "billing@vendor-payments.com",
+    "body": "Please see the attached invoice. Review the document and confirm payment details."
+  },
+  {
+    "label": "legitimate",
+    "subject": "Weekly status update",
+    "sender": "manager@company.com",
+    "body": "Please share your weekly status update by Friday. Let me know if you need help."
+  },
+  {
+    "label": "legitimate",
+    "subject": "Security training reminder",
+    "sender": "security@company.com",
+    "body": "Reminder to complete the annual security training by the end of the month."
+  },
+  {
+    "label": "legitimate",
+    "subject": "Meeting notes",
+    "sender": "teammate@company.com",
+    "body": "Attached are the meeting notes and action items from today."
+  }
+]
