@@ -1,4 +1,4 @@
-# Cybersecurity-Apps
+# Cybersecurity-AI-Apps
 
 ## AI-Based Phishing Email Detector
 
